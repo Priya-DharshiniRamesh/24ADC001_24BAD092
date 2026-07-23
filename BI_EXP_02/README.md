@@ -1,13 +1,13 @@
-# Business Intelligence Lab – Experiment 1
-## FAANG Stock Price Analysis using Tableau & Power BI
+# Business Intelligence Lab – Experiment 2
+## Global Superstore Sales Analysis using Tableau & Power BI
 
-This repository contains the implementation of **Business Intelligence Experiment 1**, where Tableau and Power BI were used to analyze a FAANG stock price dataset. The experiment focuses on understanding the interfaces of both BI tools, importing data, creating visualizations, building dashboards, and comparing predicted and actual stock prices.
+This repository contains the implementation of **Business Intelligence Experiment 2**, where Tableau and Power BI were used to analyze the Global Superstore Sales dataset. The experiment focuses on creating multiple visualization types, building interactive dashboards, and deriving business insights from sales data.
 
 ---
 
 ## 🎯 Objective
 
-To understand the basic interface, data import process, and visualization capabilities of **Tableau** and **Power BI** using a FAANG stock price dataset. The experiment also explores dashboard creation, filters, calculated fields, and KPI visualization for financial data analysis.
+To load the Global Superstore Sales dataset into **Tableau** and **Power BI**, create various visualizations, build interactive dashboards, and analyze sales performance using different chart types.
 
 ---
 
@@ -15,7 +15,7 @@ To understand the basic interface, data import process, and visualization capabi
 
 - Tableau Desktop / Tableau Public
 - Microsoft Power BI Desktop
-- CSV Dataset (FAANG Stock Prices)
+- Global Superstore Sales Dataset (CSV)
 
 ---
 
@@ -23,41 +23,39 @@ To understand the basic interface, data import process, and visualization capabi
 
 | File | Description |
 |------|-------------|
-| `TABLEAU EXP-1.twb` | Tableau workbook containing worksheets, calculated fields, and dashboard |
-| `Power BI EXP-1.pbix` | Power BI report containing charts, slicers, KPI card, and DAX measure |
-| `EX 1 (24BAD092).docx` | Lab record including pre-lab, in-lab, and post-lab exercises |
+| `TABLEAU -EXP-2.twb` | Tableau workbook containing worksheets and dashboard |
+| `Power BI - EX 2.pbix` | Power BI report with interactive visualizations |
+| `EX 2 (24BAD092).docx` | Lab record including pre-lab, in-lab, and post-lab exercises |
 
 ---
 
 ## 📊 Dataset
 
-The dataset contains historical stock market information for FAANG companies along with technical indicators.
+The **Global Superstore Sales Dataset** contains worldwide retail sales information.
 
-### Dataset Columns
+### Dataset Fields
 
-| Column | Description |
+| Field | Description |
 |---------|-------------|
-| Date | Trading date |
-| Ticker | Stock symbol |
-| Open | Opening price |
-| High | Highest price |
-| Low | Lowest price |
-| Close | Closing price |
-| Volume | Number of shares traded |
-| SMA_7 | 7-Day Simple Moving Average |
-| SMA_21 | 21-Day Simple Moving Average |
-| EMA_12 | 12-Day Exponential Moving Average |
-| EMA_26 | 26-Day Exponential Moving Average |
-| RSI_14 | Relative Strength Index |
-| MACD | Moving Average Convergence Divergence |
-| MACD_Signal | MACD Signal Line |
-| Bollinger_Upper | Upper Bollinger Band |
-| Bollinger_Lower | Lower Bollinger Band |
-| Daily_Return | Daily Percentage Return |
-| Volatility_7d | Seven-Day Rolling Volatility |
-| Next_Day_Close | Next Day Closing Price |
+| Order Date | Order date |
+| Ship Date | Shipping date |
+| Region | Sales region |
+| Market | Market segment |
+| Country | Customer country |
+| State | Customer state |
+| City | Customer city |
+| Category | Product category |
+| Sub-Category | Product sub-category |
+| Segment | Customer segment |
+| Sales | Total sales |
+| Profit | Total profit |
+| Quantity | Quantity sold |
+| Discount | Discount offered |
+| Shipping Cost | Shipping cost |
+| Order Priority | Order priority |
+| Ship Mode | Shipping method |
 
-> **Note:** The dataset is not included in this repository. Reconnect the workbook or report to your local copy of the dataset if required.
+> **Note:** The dataset is not included in this repository. Download the **Global Superstore Sales Dataset** from Kaggle or reconnect the workbook/report to your local dataset.
 
 ---
 
@@ -65,28 +63,28 @@ The dataset contains historical stock market information for FAANG companies alo
 
 ### Visualizations Created
 
-- 📈 Close Price Trend (Line Chart)
-- 📊 Volume vs Predicted Price (Scatter Plot)
-- 📋 Predicted Price by Stock (Highlight Table)
-- 📉 Prediction Error Analysis
-
-### Calculated Field
-
-```text
-Prediction Error = ABS([Next_Day_Close] - [Close])
-```
+- 📊 Bar Chart – Total Sales by Region and Category
+- 📈 Line Chart – Monthly Sales Trend
+- 🥧 Pie Chart – Sales Distribution by Category
+- 📉 Scatter Plot – Profit vs Sales
+- 🔥 Heat Map – Sales by Region and Category
+- 🌍 Geographic Map – Sales by Country
+- 🟩 Tree Map – Sales by Category and Sub-Category
 
 ### Filters Used
 
-- Ticker
-- Date
+- Year
+- Region
+- Category
 
 ### Dashboard Features
 
-- Interactive filtering
-- Stock-wise analysis
-- Date-wise trend analysis
-- Prediction error visualization
+- Interactive filters
+- Sales trend analysis
+- Geographic analysis
+- Product category comparison
+- Profit analysis
+- Business performance dashboard
 
 ---
 
@@ -94,25 +92,28 @@ Prediction Error = ABS([Next_Day_Close] - [Close])
 
 ### Visualizations Created
 
-- 📈 Line Chart – Close Price Trend
-- 📊 Clustered Column Chart – Close Price vs Predicted Price
-- 📌 KPI Card – Average Prediction Error
-- 🎛️ Slicers – Stock Ticker and Date
+- 📊 Clustered Bar Chart – Sales by Region and Category
+- 📈 Line Chart – Monthly Sales Trend
+- 🥧 Pie Chart – Sales Distribution by Category
+- 📉 Scatter Chart – Profit vs Sales
+- 🔥 Matrix (Heatmap Style) – Sales by Region and Category
+- 🌍 Map – Sales by Country
+- 🟩 Treemap – Sales by Category and Sub-Category
 
-### DAX Measure
+### Slicers Used
 
-```DAX
-Prediction Error =
-ABS(Predicted - Close)
-```
+- Region
+- Category
+- Year / Date
 
 ### Dashboard Features
 
 - Interactive slicers
-- KPI card
-- Comparison of actual and predicted prices
+- Regional sales analysis
+- Category comparison
+- Geographic sales visualization
+- Profit analysis
 - Dynamic filtering
-- User-friendly report layout
 
 ---
 
@@ -120,47 +121,60 @@ ABS(Predicted - Close)
 
 ### Tableau
 
-1. Open `TABLEAU EXP-1.twb`.
+1. Open `TABLEAU -EXP-2.twb`.
 2. Reconnect the workbook to your local dataset if prompted.
 3. Explore the worksheets and dashboard.
 
 ### Power BI
 
-1. Open `Power BI EXP-1.pbix`.
-2. Refresh or reconnect the dataset if necessary.
+1. Open `Power BI - EX 2.pbix`.
+2. Refresh or reconnect the dataset if required.
 3. View the interactive report.
 
 ---
 
 ## 📚 Key Learning Outcomes
 
-- Understood the interfaces of Tableau and Power BI.
-- Imported datasets from CSV files.
-- Created multiple business visualizations.
-- Applied filters and slicers for interactive analysis.
-- Built calculated fields and DAX measures.
-- Designed dashboards for financial data visualization.
-- Compared predicted stock prices with actual closing prices.
-- Learned how BI tools support business decision-making.
+- Learned to import datasets into Tableau and Power BI.
+- Created different business visualization types.
+- Built interactive dashboards using filters and slicers.
+- Compared regional and category-wise sales performance.
+- Analyzed sales trends and profit distribution.
+- Visualized geographic sales data using maps.
+- Understood how BI tools support business decision-making.
+
+---
+
+## 📈 Key Insights
+
+- The **West** region recorded the highest sales, while the **South** region had the lowest sales.
+- **Technology** was the highest-performing product category.
+- **November** recorded the highest monthly sales.
+- Sales and profit showed a generally positive relationship.
+- **Tables** generated high sales but comparatively lower profit.
+- The **West–Technology** combination achieved the highest sales.
+- The **United States** recorded the highest total sales.
+- **Phones**, **Chairs**, and **Binders** were the leading sub-categories in their respective categories.
 
 ---
 
 ## 📷 Dashboard Preview
 
 ### Tableau Dashboard
-<img width="934" height="470" alt="image" src="https://github.com/user-attachments/assets/bb1bddcb-bb87-4c89-bd76-ad9338e6d0f3" />
+
+<img width="987" height="496" alt="image" src="https://github.com/user-attachments/assets/a5c7b3d4-b6c1-4edb-b404-026ae5c9b9a6" />
 
 
 ### Power BI Dashboard
 
-<img width="916" height="497" alt="image" src="https://github.com/user-attachments/assets/e12e6377-551f-4076-b110-55c441338ce2" />
+<img width="967" height="548" alt="image" src="https://github.com/user-attachments/assets/e547d8dc-3d42-472c-9ede-6bea214249dc" />
 
 
 ---
 
 ## ✅ Result
 
-Successfully explored the interfaces and fundamental features of Tableau and Power BI. Imported the FAANG stock dataset, created interactive visualizations, implemented calculated fields and DAX measures, and designed dashboards for stock price analysis and financial decision-making.
+Successfully loaded the Global Superstore Sales dataset into Tableau and Power BI, created multiple business visualizations, designed interactive dashboards, and analyzed sales performance using various chart types. The experiment demonstrated how Business Intelligence tools help transform raw sales data into meaningful business insights.
 
 ---
 
@@ -171,3 +185,4 @@ Successfully explored the interfaces and fundamental features of Tableau and Pow
 - Register Number: **24BAD092**
 - Department of Artificial Intelligence and Data Science
 - Kumaraguru College of Technology
+  
